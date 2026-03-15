@@ -1,22 +1,22 @@
-# Episode 2: Push Button Controlled LED System
+// Episode 2: Push Button Controlled LED System
 
-int LED = 4;
-int BUTTON = 6;
+int LED = 4;        // LED connected to pin 4
+int BUTTON = 6;     // Button connected to pin 6
 
 void setup()
 {
-  pinMode(LED, OUTPUT);
-  pinMode(BUTTON, INPUT_PULLUP);
+  pinMode(LED, OUTPUT);      // Set LED pin as output
+  pinMode(BUTTON, INPUT);    // Set Button pin as input
 }
 
 void loop()
 {
-  if (digitalRead(BUTTON) == LOW)
+  if (digitalRead(BUTTON) == HIGH)   // If button is pressed
   {
-    digitalWrite(LED, HIGH);
+    digitalWrite(LED, LOW);          // Turn LED OFF
   }
   else
   {
-    digitalWrite(LED, LOW);
+    digitalWrite(LED, HIGH);         // Turn LED ON
   }
 }
